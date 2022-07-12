@@ -1,0 +1,15 @@
+CREATE TABLE IF NOT EXISTS public.rides
+(
+    ride_id character(55) COLLATE pg_catalog."default" NOT NULL,
+    rider_id character(55) COLLATE pg_catalog."default" NOT NULL,
+    vehicle_id character(55) COLLATE pg_catalog."default" NOT NULL,
+    city_id character(55) COLLATE pg_catalog."default" NOT NULL,
+    time_ride_start_local timestamp with time zone NOT NULL,
+    time_ride_end_local time with time zone[] NOT NULL,
+    CONSTRAINT rides_pkey PRIMARY KEY (city_id)
+)
+
+TABLESPACE pg_default;
+
+ALTER TABLE IF EXISTS public.rides
+    OWNER to postgres;
